@@ -1,80 +1,110 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>태그: JPA - Jihwan&#039;s 블로그</title><script data-ad-client="ca-pub-5609284528670199" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Jihwan&#039;s 블로그"><meta property="og:url" content="http://joojihwan.github.io/"><meta property="og:site_name" content="Jihwan&#039;s 블로그"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="http://joojihwan.github.io/img/og_image.png"><meta property="article:author" content="Jihwan Joo"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://joojihwan.github.io"},"headline":"Jihwan's 블로그","image":["https://joojihwan.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Jihwan Joo"},"description":""}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Jihwan&#039;s 블로그</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/joojihwan"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">태그</a></li><li class="is-active"><a href="#" aria-current="page">JPA</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-14T01:39:41.000Z" title="2021. 4. 14. 오전 10:39:41">2021-04-14</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-04-14T02:44:00.193Z" title="2021. 4. 14. 오전 11:44:00">2021-04-14</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/Spring/">Spring</a><span> / </span><a class="link-muted" href="/categories/Spring/JPA/">JPA</a></span><span class="level-item">3분안에 읽기 (약 448 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/14/JPA/">JPA</a></h1><div class="content"><p><strong>JPA에 대한 학습하며 꾸준히 업데이트하는 게시물입니다.</strong></p>
-<p>JPA ( Java Persistence API )</p>
-<p>JPA는 표준 ORM (Object-Relational Mapping) 으로 Spring이 아닌 Java에서 제공하는 API<br>EJB에서 제공되던 Entity Bean을 대체하는 기술</p>
-<h2 id="SQL-Mapper-과-ORM의-차이"><a href="#SQL-Mapper-과-ORM의-차이" class="headerlink" title="SQL Mapper 과 ORM의 차이"></a>SQL Mapper 과 ORM의 차이</h2><ul>
-<li>SQL Mapper :<ul>
-<li>SQL과 Object Field를 매핑</li>
-<li>SQL 문장으로 직접 DB를 다룬다. 즉 SQL을 명시해야한다.</li>
-<li>대표적으로 Mybatis, JdbcTempletes 등이 있다.</li>
-</ul>
-</li>
-<li>ORM :<ul>
-<li>DB와 Object Field를 매핑</li>
-<li>직관적인 코드(Method)로 데이터를 조작</li>
-<li>객체간의 관계를 바탕으로 SQL을 자동 생성</li>
-<li>JPA, Hibernate</li>
-</ul>
-</li>
-</ul>
-<h2 id="Spring-Data-JPA"><a href="#Spring-Data-JPA" class="headerlink" title="Spring Data JPA"></a>Spring Data JPA</h2><ul>
-<li>JPA는 Interface, Hibernate는 JPA의 구현체, Spring Data JPA는 모듈.</li>
-</ul>
-<p><img src="/img/jpa_overall_design.png" alt="JPA_Design"></p>
-<ul>
-<li>Spring Data JPA는 Spring에서 제공하는 모듈 중 하나로, JPA의 사용이 쉽도록 도와준다.<ul>
-<li>이는 JPA를 한 단계 추상화시킨 Repository라는 Interface를 제공하여 이루어진다.</li>
-<li>Repository Interface에 정해진 규칙대로 Method를 입력하면 적합한 Query를 날리는 구현체를 만들어 Bean으로 등록한다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hibernate의-특징"><a href="#Hibernate의-특징" class="headerlink" title="Hibernate의 특징"></a>Hibernate의 특징</h2><ul>
-<li>JDBC의 단점인 유사 작업 반복, 객체 지향적이지 못함을 해결할 수 있다.</li>
-<li>장점<ol>
-<li>생산성</li>
-<li>유지보수</li>
-<li>종속적이지 않음</li>
-</ol>
-</li>
-<li>단점<ol>
-<li>성능</li>
-<li>세밀함</li>
-<li>러닝커브</li>
-</ol>
-</li>
-</ul>
-<h2 id="JPA를-사용하려면"><a href="#JPA를-사용하려면" class="headerlink" title="JPA를 사용하려면"></a>JPA를 사용하려면</h2><ul>
-<li><strong>@Entity</strong> -&gt; Table</li>
-<li><strong>Repository</strong> -&gt; Query</li>
-</ul>
-<p><del>application.properties / application.yml 에 추가할 내용</del></p>
-<h2 id="JPA-Repository"><a href="#JPA-Repository" class="headerlink" title="JPA Repository"></a>JPA Repository</h2><table>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>카테고리: 정리 - Jihwan&#039;s 블로그</title><script data-ad-client="ca-pub-5609284528670199" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Jihwan&#039;s 블로그"><meta property="og:url" content="http://joojihwan.github.io/"><meta property="og:site_name" content="Jihwan&#039;s 블로그"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="http://joojihwan.github.io/img/og_image.png"><meta property="article:author" content="Jihwan Joo"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://joojihwan.github.io"},"headline":"Jihwan's 블로그","image":["https://joojihwan.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Jihwan Joo"},"description":""}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Jihwan&#039;s 블로그</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/joojihwan"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">카테고리</a></li><li><a href="/categories/Java/">Java</a></li><li class="is-active"><a href="#" aria-current="page">정리</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-05T03:31:08.000Z" title="2021. 4. 5. 오후 12:31:08">2021-04-05</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-04-15T02:05:51.081Z" title="2021. 4. 15. 오전 11:05:51">2021-04-15</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/Java/">Java</a><span> / </span><a class="link-muted" href="/categories/Java/%EC%A0%95%EB%A6%AC/">정리</a></span><span class="level-item">4분안에 읽기 (약 579 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/05/java-feature/">자바 버전별 특징</a></h1><div class="content"><table>
 <thead>
 <tr>
-<th>CRUD</th>
-<th>Method Name</th>
+<th>Version</th>
+<th align="center">발표일</th>
+<th>특징</th>
+<th>비고</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>READ</td>
-<td>find____ 로 시작</td>
+<td>JDK 1.0a</td>
+<td align="center">1994</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>Delete</td>
-<td>delete____ 로 시작</td>
+<td>JDK 1.0a2</td>
+<td align="center">1995.05.23</td>
+<td></td>
+<td>- 자바 언어가 정식으로 발표된 날</td>
 </tr>
 <tr>
-<td>Create</td>
-<td>save</td>
+<td>JDK 1.0</td>
+<td align="center">1996.01.23</td>
+<td></td>
+<td>- Oak로 불렸으나, 안정화 작업을 거친 1.0.2부터 JAVA로 변경</td>
 </tr>
 <tr>
-<td>Update</td>
-<td>READ 한 값 변경 -&gt; save</td>
+<td>JDK 1.1</td>
+<td align="center">1997.02.19</td>
+<td>- <a href="https://joojihwan.github.io/2021/04/05/inner-class">inner class</a><br />- <a href="https://joojihwan.github.io/2021/04/05/JavaBeans">JavaBeans</a><br />- <a href="https://joojihwan.github.io/2021/04/06/RMI">RMI</a><br />- <a href="https://joojihwan.github.io/2021/04/07/Reflection">reflection</a><br />- unicode<br />- 국제화 (internationallization)</td>
+<td></td>
+</tr>
+<tr>
+<td>J2SE 1.2</td>
+<td align="center">1998.12.08</td>
+<td>- strictfp<br />- SWING GUI<br />- JIT CORBA<br />- Collections</td>
+<td>- JDK -&gt; J2SE로 변경 (J2SE 5까지 사용)<br />- 1999년 업데이트를 통한 HotSpot JVM</td>
+</tr>
+<tr>
+<td>J2SE 1.3</td>
+<td align="center">2000.03.08</td>
+<td>- HotSpot JVM<br />- JNDI<br />- JPDA<br />- JavaSound</td>
+<td>- RMI가 CORBA 지원</td>
+</tr>
+<tr>
+<td>J2SE 1.4</td>
+<td align="center">2002.02.06</td>
+<td>- assert<br />- regular expression<br />- NIO<br />-IPv6<br />- XMl API<br />- JCE<br />- JSSE<br />- JAAS<br />-Java Web Start</td>
+<td></td>
+</tr>
+<tr>
+<td>J2SE 5</td>
+<td align="center">2004.09.30</td>
+<td>- generics<br />- annotation<br />- auto boxing/unboxing<br />- enumeration<br />- 가변길이 파라미터<br />- static import<br />- concurrency API</td>
+<td>- 버전 중 1을 빼고 표기 (내부적으로는 1.5, 1.6, 1.7 등을 사용)</td>
+</tr>
+<tr>
+<td>Java SE 6</td>
+<td align="center">2006.12.11</td>
+<td>- interface에 @Override 추가됨<br />- JDBC 4.0<br />- Scripting Language Support<br />- Java Compiler API<br />- pluggable annotation</td>
+<td>- J2SE -&gt; Java SE로 변경</td>
+</tr>
+<tr>
+<td>Java SE 7</td>
+<td align="center">2011.07.07</td>
+<td>- diamond operator&lt;&gt;<br />- try-resource<br />- multi-catch<br />- switch문에 String 사용<br />- concurrency API(new)<br />- Java2D 지원<br />- dynamic language 지원</td>
+<td></td>
+</tr>
+<tr>
+<td>Java SE 8</td>
+<td align="center">2014.03.18</td>
+<td>- lambda expression<br />- type annotation<br />- stream api 추가<br />- repeating annotation<br />- static link library<br />- interface default method<br />- unsigned integer 계산<br />- 날짜와 시간 API(new) -&gt; JodaTime<br />- rhino 대신 nashorn javascript 엔진 탐재</td>
+<td>- 32bit 지원 마지막 공식 버전</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td align="center">2017.09.21</td>
+<td>- Jingsau 기반 런타임 모듈화(module)<br />- JShell 추가(인터프리터 셀처럼 사용)<br />- private interface method<br />- immutable collection<br />- 통합 로깅 <br />- HTTP/2<br />- HTML 5 JavaDoc<br />- 프로퍼티 파일에 UTF-8 지원</td>
+<td>- 버전을 1.x로 하지 않고 9.0으로 변경<br />- Ahead-of-time compiler 시범 적용<br />- Java Applet 기능 종료<br />- 64bit 버전만 출시</td>
+</tr>
+<tr>
+<td>Java SE 10</td>
+<td align="center">2018.03.20</td>
+<td>- var 키워드 이용한 지역변수 타입 추론<br />- 병렬처리 가비지 컬렉터<br />- 개별 Thread로 분리된 Stop-The World<br />- 루트 CA<br />- JVM heap영역을 시스템 메모리가 아닌 다른 종류의 메모리에도 할당</td>
+<td>- JDK 레포지토리가 하나로 통합<br />- Java기반 JIT 컴파일러<br />- 이전 버전 deprecated 처리된 API 삭제</td>
+</tr>
+<tr>
+<td>JAVA SE 11</td>
+<td align="center">2018.09.25</td>
+<td>- lambda 파라미터에 대한 지역변수 문법<br />- 엡실론 가비지 컬렉터<br />- HTTP 클라이언트 표준화</td>
+<td>- OracleJDK의 독접기능이 OpenJDK에 이식 (OracleJDK와 OpenJDK가 동일해짐)<br />- 2019년 1월부터 OracleJDK가 유료 모델로 전환<br />- eclipse 재단으로 넘어간 Java EE 삭제<br />- JavaFX도 JDK에서 분리하여 모듈 제공</td>
+</tr>
+<tr>
+<td>Java SE 12</td>
+<td align="center">2019.03.19</td>
+<td>- switch문 확장 (-&gt;)<br />- 가비지 컬렉터 개선<br />- 마이크로 벤치마크 툴 추가<br />- 성능 개선</td>
+<td></td>
+</tr>
+<tr>
+<td>JAVA SE 13</td>
+<td align="center">2019.09.17</td>
+<td>- switch 문에 yield 예약어 추가</td>
+<td></td>
 </tr>
 </tbody></table>
-<p>JPA에서 기본으로 제공하지않는 Method를 Repository interface에 추가하여 사용할 수 있다.</p>
-<p>참고 링크 : <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods">Spring Docs</a></p>
-<h3 id="Builder"><a href="#Builder" class="headerlink" title="@Builder"></a>@Builder</h3><p>Lombok 의 Builder를 사용하면 객체 생성에서 편리함을 가질 수 있다.</p>
 </div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/img/avatar.png" alt="주지환"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">주지환</p><p class="is-size-6 is-block">Studying...</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Korea</span></p><a target="_blank" rel="noopener" href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjoojihwan.github.io&amp;count_bg=%23858BA2&amp;title_bg=%23B4B4B4&amp;icon=&amp;icon_color=%23E7E7E7&amp;title=hits&amp;edge_flat=false"></a></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">포스트</p><a href="/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">카테고리</p><a href="/categories"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">태그</p><a href="/tags"><p class="title">9</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/joojihwan" target="_blank" rel="noopener">팔로우</a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">카테고리</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/JDK-1-1/"><span class="level-start"><span class="level-item">JDK_1.1</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/Java/%EC%A0%95%EB%A6%AC/"><span class="level-start"><span class="level-item">정리</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/SSAFY/"><span class="level-start"><span class="level-item">SSAFY</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/SSAFY/%EB%90%98%EB%8F%8C%EC%95%84%EB%B3%B4%EA%B8%B0/"><span class="level-start"><span class="level-item">되돌아보기</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Spring/"><span class="level-start"><span class="level-item">Spring</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Spring/JPA/"><span class="level-start"><span class="level-item">JPA</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/"><span class="level-start"><span class="level-item">알고리즘 풀이</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/"><span class="level-start"><span class="level-item">프로그래머스</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-3/"><span class="level-start"><span class="level-item">Level 3</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-4/"><span class="level-start"><span class="level-item">Level 4</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">최근 글</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-14T05:34:40.000Z">2021-04-14</time></p><p class="title"><a href="/2021/04/14/%ED%92%8D%EC%84%A0%20%ED%84%B0%ED%8A%B8%EB%A6%AC%EA%B8%B0/">풍선 터트리기</a></p><p class="categories"><a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/">알고리즘 풀이</a> / <a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a> / <a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-3/">Level 3</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-14T01:39:41.000Z">2021-04-14</time></p><p class="title"><a href="/2021/04/14/JPA/">JPA</a></p><p class="categories"><a href="/categories/Spring/">Spring</a> / <a href="/categories/Spring/JPA/">JPA</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-12T08:38:34.000Z">2021-04-12</time></p><p class="title"><a href="/2021/04/12/%ED%98%B8%ED%85%94%EB%B0%A9%EB%B0%B0%EC%A0%95/">호텔방배정</a></p><p class="categories"><a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/">알고리즘 풀이</a> / <a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a> / <a href="/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-4/">Level 4</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-07T08:59:36.000Z">2021-04-07</time></p><p class="title"><a href="/2021/04/07/Reflection/">Reflection</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/JDK-1-1/">JDK_1.1</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-07T00:20:31.000Z">2021-04-07</time></p><p class="title"><a href="/2021/04/07/SSAFY/">SSAFY</a></p><p class="categories"><a href="/categories/SSAFY/">SSAFY</a> / <a href="/categories/SSAFY/%EB%90%98%EB%8F%8C%EC%95%84%EB%B3%B4%EA%B8%B0/">되돌아보기</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">아카이브</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">4월 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">태그</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Inner-Class/"><span class="tag">Inner Class</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JDK-1-1/"><span class="tag">JDK_1.1</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JPA/"><span class="tag">JPA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaBeans/"><span class="tag">JavaBeans</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Programmers/"><span class="tag">Programmers</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/RMI/"><span class="tag">RMI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSAFY/"><span class="tag">SSAFY</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Spring/"><span class="tag">Spring</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">업데이트 소식 받기</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="구독"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Jihwan&#039;s 블로그</a><p class="is-size-7"><span>&copy; 2021 Jihwan Joo</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/joojiwhan"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ko");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
