@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>http://joojihwan.github.io/2021/05/10/i18n/</loc>
+        <lastmod>2021-05-10T01:53:23.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://joojihwan.github.io/2021/04/05/java-feature/</loc>
+        <lastmod>2021-05-10T01:43:14.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://joojihwan.github.io/2021/04/19/SWEA5648/</loc>
         <lastmod>2021-05-03T11:27:01.550Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -27,14 +43,6 @@
     <url>
         <loc>http://joojihwan.github.io/2021/04/15/unicode/</loc>
         <lastmod>2021-04-15T04:28:17.479Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://joojihwan.github.io/2021/04/05/java-feature/</loc>
-        <lastmod>2021-04-15T02:08:10.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
