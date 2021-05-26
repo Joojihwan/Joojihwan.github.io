@@ -1,83 +1,24 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>JPA - Jihwan&#039;s 블로그</title><script data-ad-client="ca-pub-5609284528670199" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="JPA에 대한 학습하며 꾸준히 업데이트하는 게시물입니다. JPA ( Java Persistence API ) JPA는 표준 ORM (Object-Relational Mapping) 으로 Spring이 아닌 Java에서 제공하는 APIEJB에서 제공되던 Entity Bean을 대체하는 기술 SQL Mapper 과 ORM의 차이 SQL Mapper : SQL과"><meta property="og:type" content="blog"><meta property="og:title" content="JPA"><meta property="og:url" content="http://joojihwan.github.io/2021/04/14/JPA/"><meta property="og:site_name" content="Jihwan&#039;s 블로그"><meta property="og:description" content="JPA에 대한 학습하며 꾸준히 업데이트하는 게시물입니다. JPA ( Java Persistence API ) JPA는 표준 ORM (Object-Relational Mapping) 으로 Spring이 아닌 Java에서 제공하는 APIEJB에서 제공되던 Entity Bean을 대체하는 기술 SQL Mapper 과 ORM의 차이 SQL Mapper : SQL과"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="http://joojihwan.github.io/img/jpa_overall_design.png"><meta property="article:published_time" content="2021-04-14T01:39:41.000Z"><meta property="article:modified_time" content="2021-04-14T02:44:00.193Z"><meta property="article:author" content="Jihwan Joo"><meta property="article:tag" content="Spring"><meta property="article:tag" content="JPA"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/jpa_overall_design.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://joojihwan.github.io"},"headline":"JPA","image":["https://joojihwan.github.io/img/jpa_overall_design.png"],"datePublished":"2021-04-14T01:39:41.000Z","dateModified":"2021-04-14T02:44:00.193Z","author":{"@type":"Person","name":"Jihwan Joo"},"description":"JPA에 대한 학습하며 꾸준히 업데이트하는 게시물입니다. JPA ( Java Persistence API ) JPA는 표준 ORM (Object-Relational Mapping) 으로 Spring이 아닌 Java에서 제공하는 APIEJB에서 제공되던 Entity Bean을 대체하는 기술 SQL Mapper 과 ORM의 차이 SQL Mapper : SQL과"}</script><link rel="canonical" href="http://joojihwan.github.io/2021/04/14/JPA/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="google-site-verification" content="8vDi1lkeOixFubQ7aoumh5AnzFq0xZTNqNEUgOVx0gI"><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Jihwan&#039;s 블로그</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/joojihwan"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-14T01:39:41.000Z" title="2021. 4. 14. 오전 10:39:41">2021-04-14</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-04-14T02:44:00.193Z" title="2021. 4. 14. 오전 11:44:00">2021-04-14</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/Spring/">Spring</a><span> / </span><a class="link-muted" href="/categories/Spring/JPA/">JPA</a></span><span class="level-item">3분안에 읽기 (약 448 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">JPA</h1><div class="content"><p><strong>JPA에 대한 학습하며 꾸준히 업데이트하는 게시물입니다.</strong></p>
-<p>JPA ( Java Persistence API )</p>
-<p>JPA는 표준 ORM (Object-Relational Mapping) 으로 Spring이 아닌 Java에서 제공하는 API<br>EJB에서 제공되던 Entity Bean을 대체하는 기술</p>
-<h2 id="SQL-Mapper-과-ORM의-차이"><a href="#SQL-Mapper-과-ORM의-차이" class="headerlink" title="SQL Mapper 과 ORM의 차이"></a>SQL Mapper 과 ORM의 차이</h2><ul>
-<li>SQL Mapper :<ul>
-<li>SQL과 Object Field를 매핑</li>
-<li>SQL 문장으로 직접 DB를 다룬다. 즉 SQL을 명시해야한다.</li>
-<li>대표적으로 Mybatis, JdbcTempletes 등이 있다.</li>
-</ul>
-</li>
-<li>ORM :<ul>
-<li>DB와 Object Field를 매핑</li>
-<li>직관적인 코드(Method)로 데이터를 조작</li>
-<li>객체간의 관계를 바탕으로 SQL을 자동 생성</li>
-<li>JPA, Hibernate</li>
-</ul>
-</li>
-</ul>
-<h2 id="Spring-Data-JPA"><a href="#Spring-Data-JPA" class="headerlink" title="Spring Data JPA"></a>Spring Data JPA</h2><ul>
-<li>JPA는 Interface, Hibernate는 JPA의 구현체, Spring Data JPA는 모듈.</li>
-</ul>
-<p><img src="/img/jpa_overall_design.png" alt="JPA_Design"></p>
-<ul>
-<li>Spring Data JPA는 Spring에서 제공하는 모듈 중 하나로, JPA의 사용이 쉽도록 도와준다.<ul>
-<li>이는 JPA를 한 단계 추상화시킨 Repository라는 Interface를 제공하여 이루어진다.</li>
-<li>Repository Interface에 정해진 규칙대로 Method를 입력하면 적합한 Query를 날리는 구현체를 만들어 Bean으로 등록한다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hibernate의-특징"><a href="#Hibernate의-특징" class="headerlink" title="Hibernate의 특징"></a>Hibernate의 특징</h2><ul>
-<li>JDBC의 단점인 유사 작업 반복, 객체 지향적이지 못함을 해결할 수 있다.</li>
-<li>장점<ol>
-<li>생산성</li>
-<li>유지보수</li>
-<li>종속적이지 않음</li>
-</ol>
-</li>
-<li>단점<ol>
-<li>성능</li>
-<li>세밀함</li>
-<li>러닝커브</li>
-</ol>
-</li>
-</ul>
-<h2 id="JPA를-사용하려면"><a href="#JPA를-사용하려면" class="headerlink" title="JPA를 사용하려면"></a>JPA를 사용하려면</h2><ul>
-<li><strong>@Entity</strong> -&gt; Table</li>
-<li><strong>Repository</strong> -&gt; Query</li>
-</ul>
-<p><del>application.properties / application.yml 에 추가할 내용</del></p>
-<h2 id="JPA-Repository"><a href="#JPA-Repository" class="headerlink" title="JPA Repository"></a>JPA Repository</h2><table>
-<thead>
-<tr>
-<th>CRUD</th>
-<th>Method Name</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>READ</td>
-<td>find____ 로 시작</td>
-</tr>
-<tr>
-<td>Delete</td>
-<td>delete____ 로 시작</td>
-</tr>
-<tr>
-<td>Create</td>
-<td>save</td>
-</tr>
-<tr>
-<td>Update</td>
-<td>READ 한 값 변경 -&gt; save</td>
-</tr>
-</tbody></table>
-<p>JPA에서 기본으로 제공하지않는 Method를 Repository interface에 추가하여 사용할 수 있다.</p>
-<p>참고 링크 : <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods">Spring Docs</a></p>
-<h3 id="Builder"><a href="#Builder" class="headerlink" title="@Builder"></a>@Builder</h3><p>Lombok 의 Builder를 사용하면 객체 생성에서 편리함을 가질 수 있다.</p>
-</div><div class="article-licensing box"><div class="licensing-title"><p>JPA</p><p><a href="http://joojihwan.github.io/2021/04/14/JPA/">http://joojihwan.github.io/2021/04/14/JPA/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Jihwan Joo</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-04-14</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-04-14</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Spring/">Spring</a><a class="link-muted mr-2" rel="tag" href="/tags/JPA/">JPA</a></div><!--!--></article></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/04/14/%ED%92%8D%EC%84%A0%20%ED%84%B0%ED%8A%B8%EB%A6%AC%EA%B8%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">풍선 터트리기</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/04/12/%ED%98%B8%ED%85%94%EB%B0%A9%EB%B0%B0%EC%A0%95/"><span class="level-item">호텔방배정</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
-            this.page.url = 'http://joojihwan.github.io/2021/04/14/JPA/';
-            this.page.identifier = '2021/04/14/JPA/';
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>stompCORS - Jihwan&#039;s 블로그</title><script data-ad-client="ca-pub-5609284528670199" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Jihwan&#039;s 블로그"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="간단한 토이프로젝트를 진행하면서Stomp로 최초 소켓 연결에서 CORS 에러를 해결하던 중어이없는 문제로 시간을 소요하여 우선 간단히 정리해두려한다. 기본적인 Stomp 연결을 로컬 혹은 CORS 문제가 발생하지 않을 환경에서 동작한다는 전제 하에 1234@Overridepublic void registerStompEndpoints(StompEndpoint"><meta property="og:type" content="blog"><meta property="og:title" content="stompCORS"><meta property="og:url" content="http://joojihwan.github.io/2021/05/26/stompCORS/"><meta property="og:site_name" content="Jihwan&#039;s 블로그"><meta property="og:description" content="간단한 토이프로젝트를 진행하면서Stomp로 최초 소켓 연결에서 CORS 에러를 해결하던 중어이없는 문제로 시간을 소요하여 우선 간단히 정리해두려한다. 기본적인 Stomp 연결을 로컬 혹은 CORS 문제가 발생하지 않을 환경에서 동작한다는 전제 하에 1234@Overridepublic void registerStompEndpoints(StompEndpoint"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="http://joojihwan.github.io/img/og_image.png"><meta property="article:published_time" content="2021-05-26T00:11:10.000Z"><meta property="article:modified_time" content="2021-05-26T00:28:02.411Z"><meta property="article:author" content="Jihwan Joo"><meta property="article:tag" content="Spring Boot"><meta property="article:tag" content="2.4.0"><meta property="article:tag" content="CORS"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://joojihwan.github.io"},"headline":"stompCORS","image":["https://joojihwan.github.io/img/og_image.png"],"datePublished":"2021-05-26T00:11:10.000Z","dateModified":"2021-05-26T00:28:02.411Z","author":{"@type":"Person","name":"Jihwan Joo"},"description":"간단한 토이프로젝트를 진행하면서Stomp로 최초 소켓 연결에서 CORS 에러를 해결하던 중어이없는 문제로 시간을 소요하여 우선 간단히 정리해두려한다. 기본적인 Stomp 연결을 로컬 혹은 CORS 문제가 발생하지 않을 환경에서 동작한다는 전제 하에 1234@Overridepublic void registerStompEndpoints(StompEndpoint"}</script><link rel="canonical" href="http://joojihwan.github.io/2021/05/26/stompCORS/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="google-site-verification" content="8vDi1lkeOixFubQ7aoumh5AnzFq0xZTNqNEUgOVx0gI"><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Jihwan&#039;s 블로그</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/joojihwan"><i class="fab fa-github"></i></a><a class="navbar-item search" title="검색" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-05-26T00:11:10.000Z" title="2021. 5. 26. 오전 9:11:10">2021-05-26</time>&nbsp;게시 됨</span><span class="level-item"><time dateTime="2021-05-26T00:28:02.411Z" title="2021. 5. 26. 오전 9:28:02">2021-05-26</time>&nbsp;업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/Spring-Boot/">Spring Boot</a><span> / </span><a class="link-muted" href="/categories/Spring-Boot/CORS/">CORS</a></span><span class="level-item">3분안에 읽기 (약 423 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile">stompCORS</h1><div class="content"><p>간단한 토이프로젝트를 진행하면서<br>Stomp로 최초 소켓 연결에서 CORS 에러를 해결하던 중<br>어이없는 문제로 시간을 소요하여 우선 간단히 정리해두려한다.</p>
+<p>기본적인 Stomp 연결을 로컬 혹은 CORS 문제가 발생하지 않을 환경에서 동작한다는 전제 하에</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerStompEndpoints</span><span class="params">(StompEndpointRegistry registry)</span> </span>&#123;</span><br><span class="line">	registry.addEndpoint(<span class="string">&quot;/websocket&quot;</span>).withSockJS();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 코드가 Socket Config를 설정하는 Java class 내부에 있을 것이다.</p>
+<p>구글링했을 때</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerStompEndpoints</span><span class="params">(StompEndpointRegistry registry)</span> </span>&#123;</span><br><span class="line">	registry.addEndpoint(<span class="string">&quot;/websocket&quot;</span>).setAllowedOrigins(<span class="string">&quot;*&quot;</span>).withSockJS();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위처럼 setAllowedOrigins 를 통해 허용해주면 된다! 라고 한다.</p>
+<p>하지만 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalArgumentException: When allowCredentials is <span class="literal">true</span>, allowedOrigins cannot contain the special value <span class="string">&quot;*&quot;</span>since that cannot be <span class="built_in">set</span> on the <span class="string">&quot;Access-Control-Allow-Origin&quot;</span> response header. To allow credentials to a <span class="built_in">set</span> of origins, list them explicitly or consider using <span class="string">&quot;allowedOriginPatterns&quot;</span> instead.</span><br></pre></td></tr></table></figure>
+
+<p>이와 같은 에러를 만났고, 간단히 해석했을 때는<br>allowCredential 이 true 일때는 “*”로 CORS를 허용해줄 수 없다는 것인데</p>
+<p><a href="!https://github.com/spring-projects/spring-framework/issues/26111">https://github.com/spring-projects/spring-framework/issues/26111</a></p>
+<p>위의 링크에서 issue로 다룬 내용을 보면 2.4.0 버전이 되면서 문제가 발생하였고,<br>setAllowedOrigins 대신 setAllowedOriginsPatterns 를 사용해 해결할 수 있다고 한다.</p>
+<p>얕은 지식으로 음 CORS 처리를 해줘야지하고, 어노테이션, config 세팅을 했는데<br>왜 안될까..? 하고 한참을 찾아다녔다.<br>Stomp의 CORS 세팅을 별개로 해주어야 하는 것과 에러를 꼼꼼히 읽어보자.. 라는 교훈을 얻었다.</p>
+<p>사실 제일 처음 에러의 마지막을 읽어보면 이미 해결책을 말해주고 있었다 ㅜㅜ</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>stompCORS</p><p><a href="http://joojihwan.github.io/2021/05/26/stompCORS/">http://joojihwan.github.io/2021/05/26/stompCORS/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Jihwan Joo</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-05-26</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-05-26</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Spring-Boot/">Spring Boot</a><a class="link-muted mr-2" rel="tag" href="/tags/2-4-0/">2.4.0</a><a class="link-muted mr-2" rel="tag" href="/tags/CORS/">CORS</a></div><!--!--></article></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/05/11/strictfp/"><span class="level-item">strictfp</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">댓글</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://joojihwan.github.io/2021/05/26/stompCORS/';
+            this.page.identifier = '2021/05/26/stompCORS/';
         };
         (function() {
             var d = document, s = d.createElement('script');  

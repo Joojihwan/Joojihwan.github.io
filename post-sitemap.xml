@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>http://joojihwan.github.io/2021/05/26/stompCORS/</loc>
+        <lastmod>2021-05-26T00:28:02.411Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://joojihwan.github.io/2021/04/05/JavaBeans/</loc>
+        <lastmod>2021-05-11T04:05:57.329Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://joojihwan.github.io/2021/04/05/java-feature/</loc>
         <lastmod>2021-05-11T01:59:00.931Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -99,14 +115,6 @@
     <url>
         <loc>http://joojihwan.github.io/2021/04/05/inner-class/</loc>
         <lastmod>2021-04-06T09:01:10.763Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://joojihwan.github.io/2021/04/05/JavaBeans/</loc>
-        <lastmod>2021-04-06T09:01:10.762Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
